@@ -1,0 +1,16 @@
+{
+  "name": "mario-jump",
+  "version": "1.0.0",
+  "description": "A simple game created using HTML, CSS and JavaScript",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Débora Bastos",
+  "license": "ISC",
+  "browserslist": "ie 9",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}

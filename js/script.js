@@ -1,4 +1,5 @@
-"use strict";
+import marioStart from "../img/mario.gif";
+import marioEnd from "../img/game-over.png";
 
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
@@ -16,8 +17,7 @@ const init = function () {
   scores.textContent = 0;
 
   const data = JSON.parse(localStorage.getItem("highscoreMarioJump"));
-  if (!data) return;
-  highscore = data;
+  data ? (highscore = data) : (highscore = 0);
   highscores.textContent = highscore;
 
   const jump = () => {
@@ -39,7 +39,7 @@ const init = function () {
     pipe.style.animation = "pipe-animation 2s infinite linear";
     pipe.style.left = ``;
 
-    mario.src = "./img/mario.gif";
+    mario.src = marioStart;
     mario.style.width = "150px";
     mario.style.marginLeft = "0px";
     mario.style.bottom = `0`;
@@ -66,7 +66,7 @@ const init = function () {
       mario.style.animation = "none";
       mario.style.bottom = `${marioPosition}px`;
 
-      mario.src = "./img/game-over.png";
+      mario.src = marioEnd;
       mario.style.width = "75px";
       mario.style.marginLeft = "50px";
 
@@ -88,6 +88,7 @@ const init = function () {
     scores.textContent = score;
   }, 2000);
 };
+
 init();
 
 restart.addEventListener("click", init);
