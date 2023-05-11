@@ -1,5 +1,5 @@
 import marioStart from "../img/mario.gif";
-import marioEnd from "../img/game-over.png";
+import marioEnd from "../img/game-over.webp";
 
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
